@@ -52,10 +52,12 @@ public class TrackSwapScript : MonoBehaviour
             //mousePos.x = currentEvent.mousePosition.x;
             //mousePos.y = Camera.main.pixelHeight - currentEvent.mousePosition.y;
             //point = new Vector3(mousePos.x, mousePos.y, Camera.main.transform.position.z);
+            
 
             point = Camera.main.ScreenToViewportPoint(Input.mousePosition);
 
-            Debug.DrawRay(Camera.main.ScreenPointToRay(Input.mousePosition).origin, Camera.main.ScreenPointToRay(Input.mousePosition).direction*100, Color.red, 5f);
+
+            Debug.DrawRay(Camera.main.ScreenPointToRay(Input.mousePosition).origin, Camera.main.ScreenPointToRay(Input.mousePosition).direction * 100, Color.red, 5f);
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 1000f, LayerMask.GetMask("Track 1") | LayerMask.GetMask("Track 2") | LayerMask.GetMask("Track 3"), QueryTriggerInteraction.Ignore))
             {
                 LeftTrackScript script = hit.transform.parent.GetComponent<LeftTrackScript>();
@@ -63,10 +65,46 @@ public class TrackSwapScript : MonoBehaviour
                 GameObject trackModel = FindChildObjectWithTag(hit.transform.parent, "Track");
                 trackModel.GetComponent<TrackRotationScript>().trackDirection = currentTrackSelected;
                 //track rotation
-                
+
             }
             //Debug.Log(hit.transform.gameObject);
             mouseDown = false;
+        }
+        else if (Input.touchCount > 0)
+        {
+            //Debug.Log(mouseDown);
+            RaycastHit hit;
+
+            Vector3 point = new Vector3();
+            //Event currentEvent = Event.current;
+            //Vector2 mousePos = new Vector2();
+
+            // Get the mouse position from Event.
+            // Note that the y position from Event is inverted.
+            //mousePos.x = currentEvent.mousePosition.x;
+            //mousePos.y = Camera.main.pixelHeight - currentEvent.mousePosition.y;
+            //point = new Vector3(mousePos.x, mousePos.y, Camera.main.transform.position.z);
+            Touch touch;
+            if (Input.touchCount > 0)
+            {
+                touch = Input.GetTouch(0);
+                point = Camera.main.ScreenToViewportPoint(touch.position);
+            }
+
+            //point = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+
+
+            Debug.DrawRay(Camera.main.ScreenPointToRay(Input.mousePosition).origin, Camera.main.ScreenPointToRay(Input.mousePosition).direction * 100, Color.red, 5f);
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 1000f, LayerMask.GetMask("Track 1") | LayerMask.GetMask("Track 2") | LayerMask.GetMask("Track 3"), QueryTriggerInteraction.Ignore))
+            {
+                LeftTrackScript script = hit.transform.parent.GetComponent<LeftTrackScript>();
+                script.trackDirection = currentTrackSelected;
+                GameObject trackModel = FindChildObjectWithTag(hit.transform.parent, "Track");
+                trackModel.GetComponent<TrackRotationScript>().trackDirection = currentTrackSelected;
+                //track rotation
+
+            }
+            //Debug.Log(hit.transform.gameObject);
         }
     }
 
