@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: FMODStudioSettings
   m_EditorClassIdentifier: 
   SwitchSettingsMigration: 1
-  HasSourceProject: 0
-  HasPlatforms: 0
+  HasSourceProject: 1
+  HasPlatforms: 1
   sourceProjectPath: F:\Storage\CasualProductionRailroadSurgeon\RailroadSurgeon\New
     Unity Project\FMOD_RailroadSurgeon\FMOD_RailroadSurgeon.fspro
   SourceProjectPathUnformatted: FMOD_RailroadSurgeon\FMOD_RailroadSurgeon.fspro
-  SourceBankPathUnformatted: FMOD_RailroadSurgeon\Build\Desktop
+  SourceBankPathUnformatted: FMOD_RailroadSurgeon\Build
   AutomaticEventLoading: 1
   BankLoadType: 0
   AutomaticSampleLoading: 0

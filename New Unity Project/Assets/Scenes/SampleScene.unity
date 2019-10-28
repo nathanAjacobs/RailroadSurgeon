@@ -2950,6 +2950,7 @@ MonoBehaviour:
   trainPosition: {fileID: 780444243}
   scoreText: {fileID: 1821691753}
   gameOverText: {fileID: 1131421933}
+  music: event:/background_music
 --- !u!4 &2016594086
 Transform:
   m_ObjectHideFlags: 0

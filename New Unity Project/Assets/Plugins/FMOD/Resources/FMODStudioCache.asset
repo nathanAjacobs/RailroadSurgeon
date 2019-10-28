@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8620652570643045817
+--- !u!114 &-7112429202343005146
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: F:\Storage\CasualProductionRailroadSurgeon\RailroadSurgeon\New Unity Project\FMOD_RailroadSurgeon\Build\Desktop\Master.strings.bank
   SubDir: 
-  lastModified: 637078135677555341
+  lastModified: 637078152118655845
   LoadResult: 0
   FileSizes:
   - Name: Desktop
     Value: 846
   Exists: 1
---- !u!114 &-6647114471745176966
+--- !u!114 &-6993125038133410019
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -30,20 +30,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/train_whistle
+  m_Name: event:/background_music
   m_EditorClassIdentifier: 
-  Path: event:/train_whistle
-  guid: 70114a12391b41498ec0af307472fe32
+  Path: event:/background_music
+  guid: 0ee2e99dce8f2f459d1917b2f7e83bf5
   Banks:
-  - {fileID: -5546615606072211404}
-  IsStream: 0
+  - {fileID: -5590575555684979947}
+  IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 2000
---- !u!114 &-5546615606072211404
+  Length: 54857
+--- !u!114 &-5590575555684979947
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,13 +57,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: F:\Storage\CasualProductionRailroadSurgeon\RailroadSurgeon\New Unity Project\FMOD_RailroadSurgeon\Build\Desktop\Master.bank
   SubDir: 
-  lastModified: 637078135677525317
+  lastModified: 637078152118615807
   LoadResult: 0
   FileSizes:
   - Name: Desktop
     Value: 847616
   Exists: 1
---- !u!114 &-5036645212159847078
+--- !u!114 &-1092252824169183259
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -72,17 +72,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/train_whistle
   m_EditorClassIdentifier: 
-  Path: D:\Ryan\Documents\GitHub\NewRailroadSurgeon\RailroadSurgeon\New Unity Project\FMOD_RailroadSurgeon\Build\Desktop\Master.strings.bank
-  SubDir: 
-  lastModified: 637078066358194514
-  LoadResult: 0
-  FileSizes:
-  - Name: 
-    Value: 738
-  Exists: 1
+  Path: event:/train_whistle
+  guid: f07f30108d822c44b855c66518de1eac
+  Banks:
+  - {fileID: -5590575555684979947}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2000
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,43 +99,20 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -5036645212159847078}
-  - {fileID: 6655002017421375733}
+  - {fileID: -7112429202343005146}
+  - {fileID: -5590575555684979947}
   EditorEvents:
-  - {fileID: -6647114471745176966}
-  - {fileID: 8784425389757194496}
-  - {fileID: 770816245620940947}
+  - {fileID: -6993125038133410019}
+  - {fileID: 8212641660251017581}
+  - {fileID: -1092252824169183259}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 6655002017421375733}
+  - {fileID: -5590575555684979947}
   StringsBanks:
-  - {fileID: -8620652570643045817}
-  stringsBankWriteTime: 637078135677555341
+  - {fileID: -7112429202343005146}
+  stringsBankWriteTime: 637078152118655845
   cacheVersion: 3
---- !u!114 &770816245620940947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/background_music
-  m_EditorClassIdentifier: 
-  Path: event:/background_music
-  guid: c0ae415d32979d47a60f19e6ebc4c756
-  Banks:
-  - {fileID: -5546615606072211404}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 54857
---- !u!114 &8784425389757194496
+--- !u!114 &8212641660251017581
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -145,9 +125,9 @@ MonoBehaviour:
   m_Name: event:/train_crash
   m_EditorClassIdentifier: 
   Path: event:/train_crash
-  guid: ae5fc83c17f62f4dbbaaaf5595b81157
+  guid: c188689a4bc14344ab518dd62d0884f9
   Banks:
-  - {fileID: -5546615606072211404}
+  - {fileID: -5590575555684979947}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
