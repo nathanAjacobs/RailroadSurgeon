@@ -66,8 +66,8 @@ public class TrainMovement : MonoBehaviour
             leftTurnStarted = false;
             turnIndex = 0;
             oldX = rb.transform.position.x;
-            Debug.Log("Old X: " + oldX);
-            Debug.Log("Next Track X:" + nextTrack.x);
+            //Debug.Log("Old X: " + oldX);
+            //Debug.Log("Next Track X:" + nextTrack.x);
         }
 
         if(isTurning)

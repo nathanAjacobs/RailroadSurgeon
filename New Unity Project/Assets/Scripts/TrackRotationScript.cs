@@ -32,8 +32,8 @@ public class TrackRotationScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
 
+        
         if (lastTrackDirection != -1 && trackDirection == -1)
         {
             //Debug.Log("lastTrack: " + lastTrackDirection);

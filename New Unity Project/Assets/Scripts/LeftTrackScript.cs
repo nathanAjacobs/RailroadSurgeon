@@ -7,6 +7,9 @@ public class LeftTrackScript : MonoBehaviour
     public int trackDirection; // -1: left, 0: straight, 1: right
     public Transform nextTrack;
 
+    public LeftTrackScript TriggerOne;
+    public LeftTrackScript TriggerTwo;
+
     private Vector3 trackOne;
     private Vector3 trackTwo;
     private Vector3 trackThree;
@@ -27,6 +30,9 @@ public class LeftTrackScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
+        Destroy(TriggerOne);
+        Destroy(TriggerTwo);
+
         if (collider.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             //Debug.Log(trackDirection);
@@ -43,11 +49,18 @@ public class LeftTrackScript : MonoBehaviour
                     // straight (do nothing I think)
                     //TrainMovement.nextTrack = trackOne;
                 }
-                else
+                else if (trackDirection == 1)
                 {
                     // right
                     TrainMovement.leftTurnStarted = true;
                     TrainMovement.nextTrack = trackTwo;
+                }
+                else if (trackDirection == 2)
+                {
+                    Debug.Log("heyy");
+                    // right
+                    UIupdate.gameOver = true;
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/train_crash");
                 }
             }
             else if(this.gameObject.layer == LayerMask.NameToLayer("Track 2"))
@@ -63,11 +76,18 @@ public class LeftTrackScript : MonoBehaviour
                     // straight (do nothing I think)
                     //TrainMovement.nextTrack = trackTwo;
                 }
-                else
+                else if (trackDirection == 1)
                 {
                     // right
                     TrainMovement.leftTurnStarted = true;
                     TrainMovement.nextTrack = trackThree;
+                }
+                else if (trackDirection == 2)
+                {
+                    Debug.Log("heyy");
+                    // right
+                    UIupdate.gameOver = true;
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/train_crash");
                 }
             }
             else if (this.gameObject.layer == LayerMask.NameToLayer("Track 3"))
@@ -83,7 +103,14 @@ public class LeftTrackScript : MonoBehaviour
                     // straight (do nothing I think)
                     //TrainMovement.nextTrack = trackTwo;
                 }
-                else
+                else if (trackDirection == 1)
+                {
+                    Debug.Log("heyy");
+                    // right
+                    UIupdate.gameOver = true;
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/train_crash");
+                }
+                else if (trackDirection == 2)
                 {
                     Debug.Log("heyy");
                     // right

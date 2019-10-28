@@ -43,6 +43,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 54857
+--- !u!114 &-6134841066656662376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/train_whistle
+  m_EditorClassIdentifier: 
+  Path: event:/train_whistle
+  guid: f07f30108d822c44b855c66518de1eac
+  Banks:
+  - {fileID: 3323731565261286054}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2000
 --- !u!114 &-5590575555684979947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,6 +86,29 @@ MonoBehaviour:
   - Name: Desktop
     Value: 847616
   Exists: 1
+--- !u!114 &-4709501723679916373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/train_crash
+  m_EditorClassIdentifier: 
+  Path: event:/train_crash
+  guid: c188689a4bc14344ab518dd62d0884f9
+  Banks:
+  - {fileID: 3323731565261286054}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2000
 --- !u!114 &-1092252824169183259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,19 +145,82 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -7112429202343005146}
-  - {fileID: -5590575555684979947}
+  - {fileID: 1290009716240569378}
+  - {fileID: 3323731565261286054}
   EditorEvents:
-  - {fileID: -6993125038133410019}
-  - {fileID: 8212641660251017581}
-  - {fileID: -1092252824169183259}
+  - {fileID: 1463498839016067452}
+  - {fileID: -4709501723679916373}
+  - {fileID: -6134841066656662376}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -5590575555684979947}
+  - {fileID: 3323731565261286054}
   StringsBanks:
-  - {fileID: -7112429202343005146}
-  stringsBankWriteTime: 637078152118655845
+  - {fileID: 1290009716240569378}
+  stringsBankWriteTime: 637078156025890851
   cacheVersion: 3
+--- !u!114 &1290009716240569378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: C:\Users\natha\Desktop\Git5\RailroadSurgeon\New Unity Project\FMOD_RailroadSurgeon\Build\Desktop\Master.strings.bank
+  SubDir: 
+  lastModified: 637078156025890851
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 846
+  Exists: 1
+--- !u!114 &1463498839016067452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/background_music
+  m_EditorClassIdentifier: 
+  Path: event:/background_music
+  guid: 0ee2e99dce8f2f459d1917b2f7e83bf5
+  Banks:
+  - {fileID: 3323731565261286054}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 54857
+--- !u!114 &3323731565261286054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: C:\Users\natha\Desktop\Git5\RailroadSurgeon\New Unity Project\FMOD_RailroadSurgeon\Build\Desktop\Master.bank
+  SubDir: 
+  lastModified: 637078156025881093
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 847616
+  Exists: 1
 --- !u!114 &8212641660251017581
 MonoBehaviour:
   m_ObjectHideFlags: 0
