@@ -36,6 +36,7 @@ public class LeftTrackScript : MonoBehaviour
                 {
                     // left
                     UIupdate.gameOver = true;
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/train_crash");
                 }
                 else if(trackDirection == 0)
                 {
@@ -87,6 +88,7 @@ public class LeftTrackScript : MonoBehaviour
                     Debug.Log("heyy");
                     // right
                     UIupdate.gameOver = true;
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/train_crash");
                 }
             }
         }

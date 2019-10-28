@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ObstacleScript : MonoBehaviour
 {
+    public string music = "event:/background_music";
+    FMOD.Studio.EventInstance musicEvent;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,8 @@ public class ObstacleScript : MonoBehaviour
         if (collider.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             UIupdate.gameOver = true;
+            FMODUnity.RuntimeManager.PlayOneShot("event:/train_crash");
         }
+
     }
 }

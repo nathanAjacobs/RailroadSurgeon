@@ -14,12 +14,17 @@ public class UIupdate : MonoBehaviour
 
     public static bool gameOver;
 
+    public string music = "event:/background_music";
+    FMOD.Studio.EventInstance musicEvent;
+
     // Start is called before the first frame update
     void Start()
     {
         score = (int)trainPosition.position.z;
         timer = 0f;
         gameOver = false;
+        musicEvent = FMODUnity.RuntimeManager.CreateInstance(music);
+        musicEvent.start();
     }
 
     // Update is called once per frame
@@ -32,6 +37,7 @@ public class UIupdate : MonoBehaviour
         {
             gameOverText.gameObject.SetActive(true);
             Time.timeScale = 0f;
+            musicEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }
     }
 

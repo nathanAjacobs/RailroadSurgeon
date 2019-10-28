@@ -29,6 +29,7 @@ public class TrainMovement : MonoBehaviour
     private float speedIncrease;
 
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +41,7 @@ public class TrainMovement : MonoBehaviour
         oldX = 0f;
         timer = 0f;
         speedIncrease = trainSpeed * (1f / 3f);
+
     }
 
     // Update is called once per frame
