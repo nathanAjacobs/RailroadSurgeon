@@ -1778,6 +1778,7 @@ GameObject:
   - component: {fileID: 1339866549}
   - component: {fileID: 1339866548}
   - component: {fileID: 1339866554}
+  - component: {fileID: 1339866555}
   m_Layer: 8
   m_Name: Main Camera (1)
   m_TagString: MainCamera
@@ -2142,6 +2143,30 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &1339866555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339866546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88a26a276b4e47619ce2c5adad33fab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monochrome: 1
+  grainIntensityMin: 0
+  grainIntensityMax: 0
+  grainSize: 2
+  scratchIntensityMin: 0.05
+  scratchIntensityMax: 0.25
+  scratchFPS: 10
+  scratchJitter: 0.01
+  grainTexture: {fileID: 2800000, guid: ffa9c02760c2b4e8eb9814ec06c4b05b, type: 3}
+  scratchTexture: {fileID: 2800000, guid: 6205c27cc031f4e66b8ea90d1bfaa158, type: 3}
+  shaderRGB: {fileID: 4800000, guid: 5d7f4c401ae8946bcb0d6ff68a9e7466, type: 3}
+  shaderYUV: {fileID: 4800000, guid: 0e447868506ba49f0a73235b8a8b647a, type: 3}
 --- !u!1 &1479912408
 GameObject:
   m_ObjectHideFlags: 0
@@ -3204,16 +3229,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 146715745957864019, guid: 5834fc67e381b7c4fbed0e11f507bde7,
-        type: 3}
-      propertyPath: m_Name
-      value: Volume Box
-      objectReference: {fileID: 0}
-    - target: {fileID: 146715745957864019, guid: 5834fc67e381b7c4fbed0e11f507bde7,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 146715745957864018, guid: 5834fc67e381b7c4fbed0e11f507bde7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3267,6 +3282,16 @@ PrefabInstance:
     - target: {fileID: 146715745957864018, guid: 5834fc67e381b7c4fbed0e11f507bde7,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 146715745957864019, guid: 5834fc67e381b7c4fbed0e11f507bde7,
+        type: 3}
+      propertyPath: m_Name
+      value: Volume Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 146715745957864019, guid: 5834fc67e381b7c4fbed0e11f507bde7,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
