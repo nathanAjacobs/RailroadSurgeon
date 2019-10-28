@@ -10,6 +10,15 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject PauseMenuBehavior;
 
+    private void Start()
+    {
+        Time.timeScale = 1f;
+    }
+    private void Awake()
+    {
+        Time.timeScale = 1f;
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -46,5 +55,11 @@ public class PauseMenu : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("Quitting game...");
+    }
+
+    public void Restart()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("SampleScene");
     }
 }

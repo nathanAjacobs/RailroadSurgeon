@@ -9,6 +9,7 @@ public class UIupdate : MonoBehaviour
     public Text scoreText;
     public Text gameOverText;
     private int score;
+    public GameObject GameoverUI;
 
     private float timer;
 
@@ -38,6 +39,7 @@ public class UIupdate : MonoBehaviour
             gameOverText.gameObject.SetActive(true);
             Time.timeScale = 0f;
             musicEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            GameoverUI.SetActive(true);
         }
     }
 
