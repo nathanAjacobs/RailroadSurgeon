@@ -81,19 +81,19 @@ public class TrainMovement : MonoBehaviour
 
             if (oldX > nextTrack.x && nextTrack.x == 0f)
             {
-                newX = rb.transform.position.x - Mathf.Lerp(0f, 11f, 0.015f * trainSpeed);
+                newX = rb.transform.position.x - Mathf.Lerp(0f, 11f, trainSpeed * Time.fixedDeltaTime);
             }
             else if (oldX > nextTrack.x && nextTrack.x == -11f)
             {
-                newX = rb.transform.position.x - Mathf.Lerp(0f, 11f, 0.015f * trainSpeed);
+                newX = rb.transform.position.x - Mathf.Lerp(0f, 11f, trainSpeed * Time.fixedDeltaTime);
             }
             else if (oldX < nextTrack.x && nextTrack.x == 0f)
             {
-                newX = rb.transform.position.x + Mathf.Lerp(0f, 11f, 0.015f * trainSpeed);
+                newX = rb.transform.position.x + Mathf.Lerp(0f, 11f, trainSpeed * Time.fixedDeltaTime);
             }
             else if (oldX < nextTrack.x && nextTrack.x == 11f)
             {
-                newX = rb.transform.position.x + Mathf.Lerp(0f, 11f, 0.015f * trainSpeed);
+                newX = rb.transform.position.x + Mathf.Lerp(0f, 11f, trainSpeed * Time.fixedDeltaTime);
             }
             else
             {
@@ -106,8 +106,8 @@ public class TrainMovement : MonoBehaviour
                 isTurning = false;
             }
 
-            newPos += new Vector3(0, 0, -1) * 0.25f * trainSpeed;
-            rb.rotation = (Quaternion.Slerp(rb.rotation, Quaternion.LookRotation(-(newPos - rb.position), Vector3.up), 0.1f * trainSpeed));
+            newPos += new Vector3(0, 0, -1) * trainSpeed * 15 * Time.fixedDeltaTime;
+            rb.rotation = (Quaternion.Slerp(rb.rotation, Quaternion.LookRotation(-(newPos - rb.position), Vector3.up), trainSpeed * 5 * Time.fixedDeltaTime));
             rb.position = (newPos);
 
             turnIndex++;
@@ -120,8 +120,8 @@ public class TrainMovement : MonoBehaviour
         else
         {
             //Debug.Log("not Turning");
-            Vector3 newPos = rb.position + new Vector3(0, 0, -1) * 0.25f * trainSpeed;
-            rb.rotation = (Quaternion.Slerp(rb.rotation, Quaternion.LookRotation(-(newPos - rb.position), Vector3.up), 0.1f * trainSpeed));
+            Vector3 newPos = rb.position + new Vector3(0, 0, -1) * trainSpeed * 15 * Time.fixedDeltaTime;
+            rb.rotation = (Quaternion.Slerp(rb.rotation, Quaternion.LookRotation(-(newPos - rb.position), Vector3.up),  trainSpeed * 5 * Time.fixedDeltaTime));
             rb.position = (newPos);
         }
 
