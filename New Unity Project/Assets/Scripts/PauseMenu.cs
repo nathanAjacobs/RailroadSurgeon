@@ -9,14 +9,22 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
 
     public GameObject PauseMenuBehavior;
+    public GameObject pauseMenu;
+    public GameObject gameOverMenu;
 
     private void Start()
     {
+        GameIsPaused = false;
         Time.timeScale = 1f;
+        pauseMenu.SetActive(false);
+        gameOverMenu.SetActive(false);
     }
     private void Awake()
     {
+        GameIsPaused = false;
         Time.timeScale = 1f;
+        pauseMenu.SetActive(false);
+        gameOverMenu.SetActive(false);
     }
 
     void Update()
@@ -42,8 +50,8 @@ public class PauseMenu : MonoBehaviour
     public void MainMenu()
     {
         Time.timeScale = 1f;
-        Debug.Log("Loading Menu...");
-        SceneManager.LoadScene("Main Menu");
+        //Debug.Log("Loading Menu...");
+        SceneManager.LoadScene("ActualMainMenu");
     }
     public void Pause()
     {
@@ -54,7 +62,7 @@ public class PauseMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
-        Debug.Log("Quitting game...");
+        //Debug.Log("Quitting game...");
     }
 
     public void Restart()

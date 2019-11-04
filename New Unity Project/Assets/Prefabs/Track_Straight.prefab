@@ -158,8 +158,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trackDirection: 0
   lastTrackDirection: 0
-  leftTrack: {fileID: 2032865015052418632, guid: bbb377b3ea6c3a5408f494e51db51e47,
+  leftTrack: {fileID: 2032865015052418632, guid: 3dd368f1835b5894181d0f179e4ddb85,
     type: 3}
-  rightTrack: {fileID: 5378373849224517322, guid: 79806317185f0ed4ba2cdde981c6c674,
+  rightTrack: {fileID: 2032865015052418632, guid: 74e50d9910f2eb040969ed9a1f4d32a0,
     type: 3}
   straightTrack: {fileID: 7588200387613119345}

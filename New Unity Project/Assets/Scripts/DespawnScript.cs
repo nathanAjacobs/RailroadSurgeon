@@ -9,18 +9,26 @@ public class DespawnScript : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        timer = 0f;
-        speedMultiplier = TrainMovement.speedOfTrain;
+        //timer = 0f;
+        //speedMultiplier = TrainMovement.speedOfTrain;
     }
 
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
         timer += Time.deltaTime;
 
         if(timer >= 25f/speedMultiplier)
         {
             GameObject.Destroy(this.gameObject);
+        }
+    }*/
+
+    private void OnTriggerEnter(Collider collider)
+    {
+        if(collider.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            GameObject.Destroy(gameObject.transform.root.gameObject);
         }
     }
 }

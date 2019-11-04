@@ -8,6 +8,7 @@ public class UIupdate : MonoBehaviour
     public Transform trainPosition;
     public Text scoreText;
     public Text gameOverText;
+    public Text finalScore;
     private int score;
     public GameObject GameoverUI;
 
@@ -26,6 +27,17 @@ public class UIupdate : MonoBehaviour
         gameOver = false;
         musicEvent = FMODUnity.RuntimeManager.CreateInstance(music);
         musicEvent.start();
+        musicEvent.setPaused(false);
+    }
+
+    void Awake()
+    {
+        //score = (int)trainPosition.position.z;
+        //timer = 0f;
+        //gameOver = false;
+        //musicEvent = FMODUnity.RuntimeManager.CreateInstance(music);
+        //musicEvent.start();
+        //musicEvent.setPaused(false);
     }
 
     // Update is called once per frame
@@ -34,12 +46,23 @@ public class UIupdate : MonoBehaviour
         //score = (int)trainPosition.position.z*10;
         scoreText.text = score.ToString();
 
+        if(PauseMenu.GameIsPaused)
+        {
+            musicEvent.setPaused(true);
+        }
+        else
+        {
+            musicEvent.setPaused(false);
+        }
+
         if(gameOver)
         {
             gameOverText.gameObject.SetActive(true);
             Time.timeScale = 0f;
             musicEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             GameoverUI.SetActive(true);
+
+            finalScore.text = score.ToString();
         }
     }
 

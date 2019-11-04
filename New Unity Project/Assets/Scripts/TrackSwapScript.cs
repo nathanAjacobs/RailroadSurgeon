@@ -57,13 +57,17 @@ public class TrackSwapScript : MonoBehaviour
             point = Camera.main.ScreenToViewportPoint(Input.mousePosition);
             
 
-            Debug.DrawRay(Camera.main.ScreenPointToRay(Input.mousePosition).origin, Camera.main.ScreenPointToRay(Input.mousePosition).direction * 100, Color.red, 5f);
+            //Debug.DrawRay(Camera.main.ScreenPointToRay(Input.mousePosition).origin, Camera.main.ScreenPointToRay(Input.mousePosition).direction * 100, Color.red, 5f);
             if (point.y > 0.15 && Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 1000f, LayerMask.GetMask("Track 1") | LayerMask.GetMask("Track 2") | LayerMask.GetMask("Track 3"), QueryTriggerInteraction.Ignore))
             {
                 LeftTrackScript script = hit.transform.parent.GetComponent<LeftTrackScript>();
-                script.trackDirection = currentTrackSelected;
-                GameObject trackModel = FindChildObjectWithTag(hit.transform.parent, "Track");
-                trackModel.GetComponent<TrackRotationScript>().trackDirection = currentTrackSelected;
+                if(script != null)
+                {
+                    script.trackDirection = currentTrackSelected;
+                    GameObject trackModel = FindChildObjectWithTag(hit.transform.parent, "Track");
+                    trackModel.GetComponent<TrackRotationScript>().trackDirection = currentTrackSelected;
+                }
+                
                 //track rotation
 
             }
@@ -94,7 +98,7 @@ public class TrackSwapScript : MonoBehaviour
             //point = Camera.main.ScreenToViewportPoint(Input.mousePosition);
 
 
-            Debug.DrawRay(Camera.main.ScreenPointToRay(Input.mousePosition).origin, Camera.main.ScreenPointToRay(Input.mousePosition).direction * 100, Color.red, 5f);
+            //Debug.DrawRay(Camera.main.ScreenPointToRay(Input.mousePosition).origin, Camera.main.ScreenPointToRay(Input.mousePosition).direction * 100, Color.red, 5f);
             if (point.y > 0.15 && Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 1000f, LayerMask.GetMask("Track 1") | LayerMask.GetMask("Track 2") | LayerMask.GetMask("Track 3"), QueryTriggerInteraction.Ignore))
             {
                 LeftTrackScript script = hit.transform.parent.GetComponent<LeftTrackScript>();

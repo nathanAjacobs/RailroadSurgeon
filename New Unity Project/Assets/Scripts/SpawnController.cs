@@ -37,7 +37,7 @@ public class SpawnController : MonoBehaviour
             if (r == 5)
                 r = 4;
 
-            Debug.Log(r);
+            //Debug.Log(r);
 
             if (r == 1)
             {

@@ -50,9 +50,11 @@ public class TrainMovement : MonoBehaviour
     {
         timer += Time.fixedDeltaTime;
 
-        if(timer >= 10f)
+        if (timer >= 20f)
         {
-            trainSpeed += speedIncrease;
+            if(trainSpeed < 7f)
+                trainSpeed += speedIncrease/2;
+
             timer = 0f;
         }
         /*if(triggerHit)
@@ -60,7 +62,7 @@ public class TrainMovement : MonoBehaviour
             Instantiate(myPrefab, GetComponentInChildren);
             triggerHit = false;
         }*/
-        if(leftTurnStarted)
+        if (leftTurnStarted)
         {
             isTurning = true;
             leftTurnStarted = false;
@@ -70,14 +72,14 @@ public class TrainMovement : MonoBehaviour
             //Debug.Log("Next Track X:" + nextTrack.x);
         }
 
-        if(isTurning)
+        if (isTurning)
         {
             //Vector3 newPos = new Vector3(positions[turnIndex].position.x, rb.position.y, positions[turnIndex].position.z);
             //Vector3 newPos = Vector3.Lerp(rb.position, new Vector3(nextTrack.position.x, rb.position.y, rb.position.z), 0.1f);
 
             float newX;
 
-            if(oldX > nextTrack.x && nextTrack.x == 0f)
+            if (oldX > nextTrack.x && nextTrack.x == 0f)
             {
                 newX = rb.transform.position.x - Mathf.Lerp(0f, 11f, 0.015f * trainSpeed);
             }
@@ -103,22 +105,22 @@ public class TrainMovement : MonoBehaviour
                 newPos.x = nextTrack.x;
                 isTurning = false;
             }
-                
-            newPos += new Vector3(0, 0, -1)*0.25f * trainSpeed;
-            rb.rotation = (Quaternion.Slerp(rb.rotation, Quaternion.LookRotation(-(newPos - rb.position), Vector3.up), 0.1f*trainSpeed));
+
+            newPos += new Vector3(0, 0, -1) * 0.25f * trainSpeed;
+            rb.rotation = (Quaternion.Slerp(rb.rotation, Quaternion.LookRotation(-(newPos - rb.position), Vector3.up), 0.1f * trainSpeed));
             rb.position = (newPos);
-            
+
             turnIndex++;
 
             //Debug.Log("turning");
-            
+
             //if (turnIndex == 17)
-              //  isTurning = false;
+            //  isTurning = false;
         }
         else
         {
             //Debug.Log("not Turning");
-            Vector3 newPos = rb.position + new Vector3(0, 0, -1)*0.25f * trainSpeed;
+            Vector3 newPos = rb.position + new Vector3(0, 0, -1) * 0.25f * trainSpeed;
             rb.rotation = (Quaternion.Slerp(rb.rotation, Quaternion.LookRotation(-(newPos - rb.position), Vector3.up), 0.1f * trainSpeed));
             rb.position = (newPos);
         }

@@ -66,6 +66,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2000
+--- !u!114 &-5631490122136626718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: C:\Users\natha\Desktop\Git5\RailroadSurgeon\New Unity Project\FMOD_RailroadSurgeon\Build\Desktop\Master.bank
+  SubDir: 
+  lastModified: 637078156025881093
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 847616
+  Exists: 1
 --- !u!114 &-5590575555684979947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,6 +152,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2000
+--- !u!114 &-1016227692302236333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: C:\Users\natha\Desktop\Git5\RailroadSurgeon\New Unity Project\FMOD_RailroadSurgeon\Build\Desktop\Master.strings.bank
+  SubDir: 
+  lastModified: 637078156025890851
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 846
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,18 +185,18 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 6473424956769440372}
-  - {fileID: 8128490253848244420}
+  - {fileID: -1016227692302236333}
+  - {fileID: -5631490122136626718}
   EditorEvents:
-  - {fileID: 7565716319066399523}
-  - {fileID: 1347213711393992766}
-  - {fileID: 5757781672019464256}
+  - {fileID: 2762067580664240593}
+  - {fileID: 8911068310076197212}
+  - {fileID: 4793645997127393930}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 8128490253848244420}
+  - {fileID: -5631490122136626718}
   StringsBanks:
-  - {fileID: 6473424956769440372}
-  stringsBankWriteTime: 637078497109077179
+  - {fileID: -1016227692302236333}
+  stringsBankWriteTime: 637078156025890851
   cacheVersion: 3
 --- !u!114 &1290009716240569378
 MonoBehaviour:
@@ -224,6 +264,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 54857
+--- !u!114 &2762067580664240593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/background_music
+  m_EditorClassIdentifier: 
+  Path: event:/background_music
+  guid: 0ee2e99dce8f2f459d1917b2f7e83bf5
+  Banks:
+  - {fileID: -5631490122136626718}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 54857
 --- !u!114 &3323731565261286054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,6 +307,29 @@ MonoBehaviour:
   - Name: Desktop
     Value: 847616
   Exists: 1
+--- !u!114 &4793645997127393930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/train_whistle
+  m_EditorClassIdentifier: 
+  Path: event:/train_whistle
+  guid: f07f30108d822c44b855c66518de1eac
+  Banks:
+  - {fileID: -5631490122136626718}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2000
 --- !u!114 &5757781672019464256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -346,6 +432,29 @@ MonoBehaviour:
   guid: c188689a4bc14344ab518dd62d0884f9
   Banks:
   - {fileID: -5590575555684979947}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2000
+--- !u!114 &8911068310076197212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/train_crash
+  m_EditorClassIdentifier: 
+  Path: event:/train_crash
+  guid: c188689a4bc14344ab518dd62d0884f9
+  Banks:
+  - {fileID: -5631490122136626718}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
