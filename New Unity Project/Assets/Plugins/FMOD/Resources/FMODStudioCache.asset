@@ -206,11 +206,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: F:\Storage\CasualProductionRailroadSurgeon\RailroadSurgeon\New Unity Project\FMOD_RailroadSurgeon\Build\Desktop\Master.bank
   SubDir: 
-  lastModified: 637104092454560503
+  lastModified: 637104146892875503
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 870944
+    Value: 1294464
   Exists: 1
 --- !u!114 &-2383086212453752665
 MonoBehaviour:
@@ -345,12 +345,13 @@ MonoBehaviour:
   - {fileID: 3766344277705643614}
   - {fileID: -681739969423532839}
   - {fileID: -2383086212453752665}
+  - {fileID: 3979088252320214846}
   EditorParameters: []
   MasterBanks:
   - {fileID: -4247569580478100584}
   StringsBanks:
   - {fileID: 5701963517735350283}
-  stringsBankWriteTime: 637104092454610557
+  stringsBankWriteTime: 637104146892915543
   cacheVersion: 3
 --- !u!114 &1290009716240569378
 MonoBehaviour:
@@ -507,6 +508,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2000
+--- !u!114 &3979088252320214846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/mainMenu_music
+  m_EditorClassIdentifier: 
+  Path: event:/mainMenu_music
+  guid: cbc8f2fe0514014db36f5b4a88113424
+  Banks:
+  - {fileID: -4247569580478100584}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 36000
 --- !u!114 &4793645997127393930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -544,11 +568,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: F:\Storage\CasualProductionRailroadSurgeon\RailroadSurgeon\New Unity Project\FMOD_RailroadSurgeon\Build\Desktop\Master.strings.bank
   SubDir: 
-  lastModified: 637104092454610557
+  lastModified: 637104146892915543
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 946
+    Value: 990
   Exists: 1
 --- !u!114 &5757781672019464256
 MonoBehaviour:

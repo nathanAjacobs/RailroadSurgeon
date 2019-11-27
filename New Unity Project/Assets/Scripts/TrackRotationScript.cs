@@ -46,6 +46,7 @@ public class TrackRotationScript : MonoBehaviour
             g.transform.localPosition = turnedLocal;
             //Debug.Log("heyyyyyyyyyyy");
             Destroy(transform.gameObject);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/track_place");
 
         }
         else if (lastTrackDirection != 0 && trackDirection == 0)
@@ -53,12 +54,14 @@ public class TrackRotationScript : MonoBehaviour
             GameObject g = Instantiate(straightTrack, straightLocal, transform.rotation, transform.parent);
             g.transform.localPosition = straightLocal;
             Destroy(gameObject);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/track_place");
         }
         else if(lastTrackDirection != 1 && trackDirection == 1)
         {
             GameObject g = Instantiate(rightTrack, turnedLocal, transform.rotation, transform.parent);
             g.transform.localPosition = turnedLocal;
             Destroy(gameObject);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/track_place");
         }
 
         lastTrackDirection = trackDirection;
