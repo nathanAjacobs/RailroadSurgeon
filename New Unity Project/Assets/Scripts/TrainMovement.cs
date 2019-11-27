@@ -143,12 +143,17 @@ public class TrainMovement : MonoBehaviour
 
             //rb.MovePosition(rb.position + new Vector3(0, 0, -1));
 
-            pivot.position = new Vector3(0, pivotPlaceHolder.position.y, pivotPlaceHolder.position.z);
+            
         }
     }
 
     private void Update()
     {
         speedOfTrain = trainSpeed;
+    }
+
+    private void LateUpdate()
+    {
+        pivot.position = new Vector3(0, pivotPlaceHolder.position.y, pivotPlaceHolder.position.z);
     }
 }
