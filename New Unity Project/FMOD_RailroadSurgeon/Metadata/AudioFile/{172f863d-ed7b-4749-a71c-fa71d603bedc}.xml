@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{172f863d-ed7b-4749-a71c-fa71d603bedc}">
+		<property name="assetPath">
+			<value>RRSMainMenu.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>37</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e269db17-f9b3-456c-ab8a-bc6809136196}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -12,10 +12,20 @@ public class MainMenu : MonoBehaviour
     public GameObject OptionsObject;
     public GameObject Main_Menu;
 
+    public string music = "event:/mainMenu_music";
+    FMOD.Studio.EventInstance musicEvent;
+
+    public void Start()
+    {
+        musicEvent = FMODUnity.RuntimeManager.CreateInstance(music);
+        musicEvent.start();
+    }
+
     public void Play()
     {
         SceneManager.LoadScene("SampleScene");
         GameIsPaused = false;
+        musicEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
     public void Options()
     {

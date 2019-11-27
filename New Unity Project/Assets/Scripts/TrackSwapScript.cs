@@ -116,18 +116,21 @@ public class TrackSwapScript : MonoBehaviour
     {
         currentTrackSelected = -1;
         leftButton.Select();
+        FMODUnity.RuntimeManager.PlayOneShot("event:/track_select");
     }
 
     public void RightButtonClicked()
     {
         currentTrackSelected = 1;
         rightButton.Select();
+        FMODUnity.RuntimeManager.PlayOneShot("event:/track_select");
     }
 
     public void StraightButtonClicked()
     {
         currentTrackSelected = 0;
         straightButton.Select();
+        FMODUnity.RuntimeManager.PlayOneShot("event:/track_select");
     }
 
     // method to find child game object with given tag
