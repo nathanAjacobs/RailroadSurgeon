@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.00.00">
-	<object class="AudioFile" id="{1c60a01d-814c-45ba-9b58-09c4f0a5beff}">
+	<object class="AudioFile" id="{9faf0206-2a34-403b-a4e0-ccc93aca82ed}">
 		<property name="assetPath">
 			<value>train_whistle.wav</value>
 		</property>
@@ -14,7 +14,7 @@
 			<value>2</value>
 		</property>
 		<relationship name="masterAssetFolder">
-			<destination>{7c61f1e4-7e51-42b0-8ff5-602427090829}</destination>
+			<destination>{e269db17-f9b3-456c-ab8a-bc6809136196}</destination>
 		</relationship>
 	</object>
 </objects>

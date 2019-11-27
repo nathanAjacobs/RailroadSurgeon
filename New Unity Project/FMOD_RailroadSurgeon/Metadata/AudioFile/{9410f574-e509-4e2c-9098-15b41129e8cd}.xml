@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.00.00">
-	<object class="AudioFile" id="{32ad8a2a-b647-4cac-9e18-a8bf9f9faa23}">
+	<object class="AudioFile" id="{9410f574-e509-4e2c-9098-15b41129e8cd}">
 		<property name="assetPath">
-			<value>train_crash.wav</value>
+			<value>RailroadSurgeon.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
@@ -11,10 +14,10 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>2</value>
+			<value>54.857142857142854</value>
 		</property>
 		<relationship name="masterAssetFolder">
-			<destination>{7c61f1e4-7e51-42b0-8ff5-602427090829}</destination>
+			<destination>{e269db17-f9b3-456c-ab8a-bc6809136196}</destination>
 		</relationship>
 	</object>
 </objects>
