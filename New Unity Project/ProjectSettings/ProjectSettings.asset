@@ -60,7 +60,7 @@ PlayerSettings:
   allowedAutorotateToLandscapeRight: 1
   allowedAutorotateToLandscapeLeft: 1
   useOSAutorotation: 1
-  use32BitDisplayBuffer: 1
+  use32BitDisplayBuffer: 0
   preserveFramebufferAlpha: 0
   disableDepthAndStencilBuffers: 0
   androidStartInFullscreen: 1
@@ -77,7 +77,7 @@ PlayerSettings:
   hideHomeButton: 0
   submitAnalytics: 1
   usePlayerLog: 1
-  bakeCollisionMeshes: 0
+  bakeCollisionMeshes: 1
   forceSingleInstance: 0
   resizableWindow: 0
   useMacAppStoreValidation: 0
@@ -124,29 +124,6 @@ PlayerSettings:
   - {fileID: 1303296323492748824, guid: 1264593fc2f648a479efa8417e6b4660, type: 3}
   - {fileID: 1303296323492748824, guid: 3e6553e83ea8470428322bf1c823d206, type: 3}
   - {fileID: 1303296323492748824, guid: 0b81b3576589994408f88b5652dd3b45, type: 3}
-  - {fileID: 5788270498899978649, guid: 91db9b57e389d044ab7670df97754724, type: 3}
-  - {fileID: 5788270498899978649, guid: 28659831f3bfa694dbf30cc4c6170b6e, type: 3}
-  - {fileID: 2697276751487620880, guid: 422aa98f6122f2a4487f53a6d845301c, type: 3}
-  - {fileID: 7492669891945885477, guid: fd065fe2cf72cd54787917cfc291f013, type: 3}
-  - {fileID: 2032865015052418632, guid: 3dd368f1835b5894181d0f179e4ddb85, type: 3}
-  - {fileID: 2032865015052418632, guid: 74e50d9910f2eb040969ed9a1f4d32a0, type: 3}
-  - {fileID: 7588200387613119345, guid: b0dd92428cef8e345aa247d3c0b44b25, type: 3}
-  - {fileID: 667133314855253672, guid: 799fde74a8f665243993c4f0d8b94d98, type: 3}
-  - {fileID: 2394306560309149662, guid: 98ea23b7bb31b724bb1ca34ccd23b06a, type: 3}
-  - {fileID: 160853166021657568, guid: bbd007ea149d4af449bb56a492c371ed, type: 3}
-  - {fileID: 8524979496021150158, guid: 37049916ae6dd734cae703885288c03a, type: 3}
-  - {fileID: 3133529879373893816, guid: 57f88f3e64206e94fadb4933e7a368a3, type: 3}
-  - {fileID: 6749675479183365162, guid: 0b5cbd2b39e0bbb468fb46e568a4a7ba, type: 3}
-  - {fileID: 4295921984901908531, guid: b802c9bedbf2ae34180ed8f4923b9753, type: 3}
-  - {fileID: 3668524870734637605, guid: 0510546ecfe7be6418e23ff80131ad7a, type: 3}
-  - {fileID: 627441356579340634, guid: b16f608bef97837448755987b1dfb4ca, type: 3}
-  - {fileID: 6644709730432850610, guid: c4f119c82b6e08f4e9309fb1e54d8b78, type: 3}
-  - {fileID: 8782739974083456088, guid: 32626ff01f0cd644eb6fdd62aa85fde5, type: 3}
-  - {fileID: 503058563576201612, guid: 75a67711dc357fc40b06e4152548837f, type: 3}
-  - {fileID: 5322573385380780704, guid: 0f80cc415197bd74c841e9cc4d324401, type: 3}
-  - {fileID: 8524979496021150158, guid: 37049916ae6dd734cae703885288c03a, type: 3}
-  - {fileID: 5493360669037066461, guid: 2fffa0ed9ed01ce4bb9eeef1bab2822c, type: 3}
-  - {fileID: 1418044022898400379, guid: 45d6993ea5ed97c4192f57e14fcf8fd0, type: 3}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -178,7 +155,7 @@ PlayerSettings:
     enable360StereoCapture: 0
   isWsaHolographicRemotingEnabled: 0
   protectGraphicsMemory: 0
-  enableFrameTimingStats: 0
+  enableFrameTimingStats: 1
   useHDRDisplay: 0
   m_ColorGamuts: 00000000
   targetPixelDensity: 30
@@ -400,7 +377,7 @@ PlayerSettings:
     m_StaticBatching: 1
     m_DynamicBatching: 0
   - m_BuildTarget: Android
-    m_StaticBatching: 1
+    m_StaticBatching: 0
     m_DynamicBatching: 0
   - m_BuildTarget: iPhone
     m_StaticBatching: 1
@@ -410,7 +387,7 @@ PlayerSettings:
     m_DynamicBatching: 0
   m_BuildTargetGraphicsAPIs:
   - m_BuildTarget: AndroidPlayer
-    m_APIs: 150000000b000000
+    m_APIs: 15000000
     m_Automatic: 0
   - m_BuildTarget: iOSSupport
     m_APIs: 10000000
