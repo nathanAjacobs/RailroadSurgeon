@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TrainMovement : MonoBehaviour
 {
@@ -28,11 +29,25 @@ public class TrainMovement : MonoBehaviour
 
     private float speedIncrease;
 
+    private bool isLoaded = false;
+
+
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        isLoaded = true;
+    }
 
 
     // Start is called before the first frame update
     void Start()
     {
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 60;
         triggerHit = false;
         rb = GetComponent<Rigidbody>();
         isTurning = false;
@@ -41,93 +56,95 @@ public class TrainMovement : MonoBehaviour
         oldX = 0f;
         timer = 0f;
         speedIncrease = trainSpeed * (1f / 3f);
-
     }
 
     // Update is called once per frame
 
     private void FixedUpdate()
     {
-        timer += Time.fixedDeltaTime;
-
-        if (timer >= 20f)
+        if(isLoaded)
         {
-            if(trainSpeed < 7f)
-                trainSpeed += speedIncrease/2;
+            timer += Time.fixedDeltaTime;
 
-            timer = 0f;
-        }
-        /*if(triggerHit)
-        {
-            Instantiate(myPrefab, GetComponentInChildren);
-            triggerHit = false;
-        }*/
-        if (leftTurnStarted)
-        {
-            isTurning = true;
-            leftTurnStarted = false;
-            turnIndex = 0;
-            oldX = rb.transform.position.x;
-            //Debug.Log("Old X: " + oldX);
-            //Debug.Log("Next Track X:" + nextTrack.x);
-        }
-
-        if (isTurning)
-        {
-            //Vector3 newPos = new Vector3(positions[turnIndex].position.x, rb.position.y, positions[turnIndex].position.z);
-            //Vector3 newPos = Vector3.Lerp(rb.position, new Vector3(nextTrack.position.x, rb.position.y, rb.position.z), 0.1f);
-
-            float newX;
-
-            if (oldX > nextTrack.x && nextTrack.x == 0f)
+            if (timer >= 20f)
             {
-                newX = rb.transform.position.x - Mathf.Lerp(0f, 11f, trainSpeed * Time.fixedDeltaTime);
+                if (trainSpeed < 7f)
+                    trainSpeed += speedIncrease / 2;
+
+                timer = 0f;
             }
-            else if (oldX > nextTrack.x && nextTrack.x == -11f)
+            /*if(triggerHit)
             {
-                newX = rb.transform.position.x - Mathf.Lerp(0f, 11f, trainSpeed * Time.fixedDeltaTime);
+                Instantiate(myPrefab, GetComponentInChildren);
+                triggerHit = false;
+            }*/
+            if (leftTurnStarted)
+            {
+                isTurning = true;
+                leftTurnStarted = false;
+                turnIndex = 0;
+                oldX = rb.transform.position.x;
+                //Debug.Log("Old X: " + oldX);
+                //Debug.Log("Next Track X:" + nextTrack.x);
             }
-            else if (oldX < nextTrack.x && nextTrack.x == 0f)
+
+            if (isTurning)
             {
-                newX = rb.transform.position.x + Mathf.Lerp(0f, 11f, trainSpeed * Time.fixedDeltaTime);
-            }
-            else if (oldX < nextTrack.x && nextTrack.x == 11f)
-            {
-                newX = rb.transform.position.x + Mathf.Lerp(0f, 11f, trainSpeed * Time.fixedDeltaTime);
+                //Vector3 newPos = new Vector3(positions[turnIndex].position.x, rb.position.y, positions[turnIndex].position.z);
+                //Vector3 newPos = Vector3.Lerp(rb.position, new Vector3(nextTrack.position.x, rb.position.y, rb.position.z), 0.1f);
+
+                float newX;
+
+                if (oldX > nextTrack.x && nextTrack.x == 0f)
+                {
+                    newX = rb.transform.position.x - Mathf.Lerp(0f, 11f, trainSpeed * Time.fixedDeltaTime);
+                }
+                else if (oldX > nextTrack.x && nextTrack.x == -11f)
+                {
+                    newX = rb.transform.position.x - Mathf.Lerp(0f, 11f, trainSpeed * Time.fixedDeltaTime);
+                }
+                else if (oldX < nextTrack.x && nextTrack.x == 0f)
+                {
+                    newX = rb.transform.position.x + Mathf.Lerp(0f, 11f, trainSpeed * Time.fixedDeltaTime);
+                }
+                else if (oldX < nextTrack.x && nextTrack.x == 11f)
+                {
+                    newX = rb.transform.position.x + Mathf.Lerp(0f, 11f, trainSpeed * Time.fixedDeltaTime);
+                }
+                else
+                {
+                    newX = 0;
+                }
+                Vector3 newPos = new Vector3(newX, rb.transform.position.y, rb.transform.position.z);
+                if (Mathf.Abs(newX - nextTrack.x) < 0.2f)
+                {
+                    newPos.x = nextTrack.x;
+                    isTurning = false;
+                }
+
+                newPos += new Vector3(0, 0, -1) * trainSpeed * 15 * Time.fixedDeltaTime;
+                rb.rotation = (Quaternion.Slerp(rb.rotation, Quaternion.LookRotation(-(newPos - rb.position), Vector3.up), trainSpeed * 5 * Time.fixedDeltaTime));
+                rb.position = (newPos);
+
+                turnIndex++;
+
+                //Debug.Log("turning");
+
+                //if (turnIndex == 17)
+                //  isTurning = false;
             }
             else
             {
-                newX = 0;
-            }
-            Vector3 newPos = new Vector3(newX, rb.transform.position.y, rb.transform.position.z);
-            if (Mathf.Abs(newX - nextTrack.x) < 0.2f)
-            {
-                newPos.x = nextTrack.x;
-                isTurning = false;
+                //Debug.Log("not Turning");
+                Vector3 newPos = rb.position + new Vector3(0, 0, -1) * trainSpeed * 15 * Time.fixedDeltaTime;
+                rb.rotation = (Quaternion.Slerp(rb.rotation, Quaternion.LookRotation(-(newPos - rb.position), Vector3.up), trainSpeed * 5 * Time.fixedDeltaTime));
+                rb.position = (newPos);
             }
 
-            newPos += new Vector3(0, 0, -1) * trainSpeed * 15 * Time.fixedDeltaTime;
-            rb.rotation = (Quaternion.Slerp(rb.rotation, Quaternion.LookRotation(-(newPos - rb.position), Vector3.up), trainSpeed * 5 * Time.fixedDeltaTime));
-            rb.position = (newPos);
+            //rb.MovePosition(rb.position + new Vector3(0, 0, -1));
 
-            turnIndex++;
-
-            //Debug.Log("turning");
-
-            //if (turnIndex == 17)
-            //  isTurning = false;
+            pivot.position = new Vector3(0, pivotPlaceHolder.position.y, pivotPlaceHolder.position.z);
         }
-        else
-        {
-            //Debug.Log("not Turning");
-            Vector3 newPos = rb.position + new Vector3(0, 0, -1) * trainSpeed * 15 * Time.fixedDeltaTime;
-            rb.rotation = (Quaternion.Slerp(rb.rotation, Quaternion.LookRotation(-(newPos - rb.position), Vector3.up),  trainSpeed * 5 * Time.fixedDeltaTime));
-            rb.position = (newPos);
-        }
-
-        //rb.MovePosition(rb.position + new Vector3(0, 0, -1));
-
-        pivot.position = new Vector3(0, pivotPlaceHolder.position.y, pivotPlaceHolder.position.z);
     }
 
     private void Update()
