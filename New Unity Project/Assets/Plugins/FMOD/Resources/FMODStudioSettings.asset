@@ -15,8 +15,7 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: F:\Storage\CasualProductionRailroadSurgeon\RailroadSurgeon\New
-    Unity Project\FMOD_RailroadSurgeon\FMOD_RailroadSurgeon.fspro
+  sourceProjectPath: D:\Documents\GitHub\RailroadSurgeon\New Unity Project\FMOD_RailroadSurgeon\FMOD_RailroadSurgeon.fspro
   SourceProjectPathUnformatted: FMOD_RailroadSurgeon\FMOD_RailroadSurgeon.fspro
   SourceBankPathUnformatted: FMOD_RailroadSurgeon\Build
   AutomaticEventLoading: 1

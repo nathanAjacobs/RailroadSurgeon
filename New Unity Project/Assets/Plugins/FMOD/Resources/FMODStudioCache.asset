@@ -195,6 +195,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2000
+--- !u!114 &-5801663031723592429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: D:\Documents\GitHub\RailroadSurgeon\New Unity Project\FMOD_RailroadSurgeon\Build\Desktop\Master.bank
+  SubDir: 
+  lastModified: 637107925514504232
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1306304
+  Exists: 1
 --- !u!114 &-5631490122136626718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -433,6 +453,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 54857
+--- !u!114 &-1818208769717293302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/mainMenu_music
+  m_EditorClassIdentifier: 
+  Path: event:/mainMenu_music
+  guid: cbc8f2fe0514014db36f5b4a88113424
+  Banks:
+  - {fileID: -5801663031723592429}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 36000
 --- !u!114 &-1266574726809592387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -558,22 +601,22 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 5647160391209026865}
-  - {fileID: -8272439822918733354}
+  - {fileID: 5919223479827972398}
+  - {fileID: -5801663031723592429}
   EditorEvents:
-  - {fileID: 9175976799972924766}
-  - {fileID: -4917418916081151740}
-  - {fileID: 6826782912853301730}
-  - {fileID: 8110771054865876640}
-  - {fileID: 877241423415935922}
-  - {fileID: -8968653398610399902}
-  - {fileID: -7964558390686793130}
+  - {fileID: 6099102091010731567}
+  - {fileID: 7582248791942787658}
+  - {fileID: 1099282537719176830}
+  - {fileID: 9038569262592176460}
+  - {fileID: -1818208769717293302}
+  - {fileID: 7067348356763326416}
+  - {fileID: 4475107478765653729}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -8272439822918733354}
+  - {fileID: -5801663031723592429}
   StringsBanks:
-  - {fileID: 5647160391209026865}
-  stringsBankWriteTime: 637107903069978974
+  - {fileID: 5919223479827972398}
+  stringsBankWriteTime: 637107925514513932
   cacheVersion: 3
 --- !u!114 &877241423415935922
 MonoBehaviour:
@@ -621,6 +664,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2000
+--- !u!114 &1099282537719176830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/background_music
+  m_EditorClassIdentifier: 
+  Path: event:/background_music
+  guid: 99a524d934c4c14b96c8e010ace81ac2
+  Banks:
+  - {fileID: -5801663031723592429}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 54857
 --- !u!114 &1290009716240569378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -822,6 +888,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 36000
+--- !u!114 &4475107478765653729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/train_crash
+  m_EditorClassIdentifier: 
+  Path: event:/train_crash
+  guid: dc4c7bf32d276f43947b4c88bc002696
+  Banks:
+  - {fileID: -5801663031723592429}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2000
 --- !u!114 &4793645997127393930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -908,6 +997,49 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2000
+--- !u!114 &5919223479827972398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: D:\Documents\GitHub\RailroadSurgeon\New Unity Project\FMOD_RailroadSurgeon\Build\Desktop\Master.strings.bank
+  SubDir: 
+  lastModified: 637107925514513932
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1106
+  Exists: 1
+--- !u!114 &6099102091010731567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/track_place
+  m_EditorClassIdentifier: 
+  Path: event:/track_place
+  guid: 27bf24ccc1007b4dbce175069e051c72
+  Banks:
+  - {fileID: -5801663031723592429}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1000
 --- !u!114 &6473424956769440372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -951,6 +1083,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 54857
+--- !u!114 &7067348356763326416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/track_select
+  m_EditorClassIdentifier: 
+  Path: event:/track_select
+  guid: d28a32a173791746b796c4152644f4ae
+  Banks:
+  - {fileID: -5801663031723592429}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1000
 --- !u!114 &7565716319066399523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -974,6 +1129,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 54857
+--- !u!114 &7582248791942787658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/train_whistle
+  m_EditorClassIdentifier: 
+  Path: event:/train_whistle
+  guid: 41c6a658ba5ab6448f7cc5d327ce6d38
+  Banks:
+  - {fileID: -5801663031723592429}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2000
 --- !u!114 &7884122071075190934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1109,6 +1287,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2000
+--- !u!114 &9038569262592176460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI_button_press
+  m_EditorClassIdentifier: 
+  Path: event:/UI_button_press
+  guid: bd3114c969203445bdb3d98dd9037211
+  Banks:
+  - {fileID: -5801663031723592429}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1000
 --- !u!114 &9175976799972924766
 MonoBehaviour:
   m_ObjectHideFlags: 0
