@@ -32,12 +32,14 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Enable: Options");
         OptionsObject.SetActive(true);
         Main_Menu.SetActive(false);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI_button_press");
     }
 
     public void Back()
     {
         OptionsObject.SetActive(false);
         Main_Menu.SetActive(true);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI_button_press");
     }
     public void QuitGame()
     {
