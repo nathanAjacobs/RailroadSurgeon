@@ -180,9 +180,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57e92bf306ea4f243b0a1ca7edc51a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicSlider: {fileID: 0}
-  sfxSlider: {fileID: 0}
-  masterSlider: {fileID: 0}
+  musicSlider: {fileID: 794454163}
+  sfxSlider: {fileID: 636754740}
+  masterSlider: {fileID: 1634613596}
 --- !u!1 &200348206 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6645759552679590910, guid: 1b73434baaf68c04ea004f80e58b100d,

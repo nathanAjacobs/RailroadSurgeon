@@ -10,7 +10,7 @@ public class VolumeControl : MonoBehaviour
     FMOD.Studio.Bus Master;
     float MusicVolume = 0.5f;
     float SFXVolume = 0.5f;
-    float MasterVolume = 0.5f;
+    float MasterVolume = 1f;
 
     public Slider musicSlider;
     public Slider sfxSlider;
@@ -21,7 +21,7 @@ public class VolumeControl : MonoBehaviour
     {
         Music = FMODUnity.RuntimeManager.GetBus("bus:/Music");
         SFX = FMODUnity.RuntimeManager.GetBus("bus:/SFX");
-        Master = FMODUnity.RuntimeManager.GetBus("bus:/Master");
+        Master = FMODUnity.RuntimeManager.GetBus("bus:/");
 
         if(PlayerPrefs.GetFloat("MusicVolume",  1000) != 1000)
             MusicVolume = PlayerPrefs.GetFloat("MusicVolume");
@@ -31,6 +31,7 @@ public class VolumeControl : MonoBehaviour
 
         if (PlayerPrefs.GetFloat("MasterVolume", 1000) != 1000)
             MasterVolume = PlayerPrefs.GetFloat("MasterVolume");
+        
 
         masterSlider.value = MasterVolume;
         musicSlider.value = MusicVolume;

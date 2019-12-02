@@ -38,7 +38,7 @@ public class UIupdate : MonoBehaviour
     {
         Music = FMODUnity.RuntimeManager.GetBus("bus:/Music");
         SFX = FMODUnity.RuntimeManager.GetBus("bus:/SFX");
-        Master = FMODUnity.RuntimeManager.GetBus("bus:/Master");
+        Master = FMODUnity.RuntimeManager.GetBus("bus:/");
 
         Music.setVolume(PlayerPrefs.GetFloat("MusicVolume"));
 
