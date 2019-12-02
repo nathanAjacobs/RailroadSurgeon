@@ -82,10 +82,10 @@ public class TrainMovement : MonoBehaviour
         {
             timer += Time.fixedDeltaTime;
 
-            if (timer >= 20f)
+            if (timer >= 9f)
             {
                 if (trainSpeed < 7f)
-                    trainSpeed += speedIncrease / 2;
+                    trainSpeed += speedIncrease / 4;
 
                 timer = 0f;
             }

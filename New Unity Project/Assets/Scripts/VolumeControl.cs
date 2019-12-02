@@ -8,7 +8,7 @@ public class VolumeControl : MonoBehaviour
     FMOD.Studio.Bus Music;
     FMOD.Studio.Bus SFX;
     FMOD.Studio.Bus Master;
-    float MusicVolume = 0.5f;
+    float MusicVolume = 0.875f;
     float SFXVolume = 0.5f;
     float MasterVolume = 1f;
 

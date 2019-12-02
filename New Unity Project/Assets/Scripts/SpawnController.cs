@@ -12,6 +12,13 @@ public class SpawnController : MonoBehaviour
     public GameObject track2;
     public GameObject track3;
     public GameObject track4;
+    public GameObject track5;
+    public GameObject track6;
+    public GameObject track7;
+    public GameObject track8;
+    public GameObject track9;
+    public GameObject track10;
+    public GameObject track11;
 
     //public static int index = 0;
 
@@ -32,9 +39,9 @@ public class SpawnController : MonoBehaviour
     {
         if(needToSpawn)
         {
-            int r = (int)(Random.value * 4 + 1);
+            int r = (int)(Random.value * 11 + 1);
 
-            if (r == 5)
+            if (r == 12)
                 r = 4;
 
             //Debug.Log(r);
@@ -55,8 +62,35 @@ public class SpawnController : MonoBehaviour
             {
                 Instantiate(track4, spawnPos, rot);
             }
-            
-            
+            else if (r == 5)
+            {
+                Instantiate(track5, spawnPos, rot);
+            }
+            else if (r == 6)
+            {
+                Instantiate(track6, spawnPos, rot);
+            }
+            else if (r == 7)
+            {
+                Instantiate(track7, spawnPos, rot);
+            }
+            else if (r == 8)
+            {
+                Instantiate(track8, spawnPos, rot);
+            }
+            else if (r == 9)
+            {
+                Instantiate(track9, spawnPos, rot);
+            }
+            else if (r == 10)
+            {
+                Instantiate(track10, spawnPos, rot);
+            }
+            else if (r == 11)
+            {
+                Instantiate(track11, spawnPos, rot);
+            }
+
             needToSpawn = false;
         }
     }

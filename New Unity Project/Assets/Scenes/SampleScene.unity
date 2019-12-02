@@ -97,7 +97,7 @@ LightmapSettings:
     m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -354,10 +354,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67c59edf860ff1448a254c2382055def, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  track1: {fileID: 1303296323492748824, guid: 7229bf0b060901a4cbdf58c964131a0d, type: 3}
-  track2: {fileID: 1303296323492748824, guid: 7229bf0b060901a4cbdf58c964131a0d, type: 3}
+  track1: {fileID: 1303296323492748824, guid: 21556534868ed904c9bb38e1bce4d43f, type: 3}
+  track2: {fileID: 1303296323492748824, guid: a0489ac8dc92abc44bbfcb3addaf4d68, type: 3}
   track3: {fileID: 1303296323492748824, guid: 7229bf0b060901a4cbdf58c964131a0d, type: 3}
-  track4: {fileID: 1303296323492748824, guid: 7229bf0b060901a4cbdf58c964131a0d, type: 3}
+  track4: {fileID: 1303296323492748824, guid: 370943c8d685c59488161a8cc1a2848c, type: 3}
+  track5: {fileID: 1303296323492748824, guid: b436d89c501900b41a656a3698747eb9, type: 3}
+  track6: {fileID: 1303296323492748824, guid: c99c66e92694ba540bea62de4908fa72, type: 3}
+  track7: {fileID: 1303296323492748824, guid: 53f3cf8a12cb8c74296841acd06a08fa, type: 3}
+  track8: {fileID: 1303296323492748824, guid: a3a8fa22abc39284c9516543e23f3e24, type: 3}
+  track9: {fileID: 1303296323492748824, guid: e01dd602d329613458c088ffc2832b26, type: 3}
+  track10: {fileID: 1303296323492748824, guid: a4449e541be685f43a4ae819b4cea038, type: 3}
+  track11: {fileID: 1303296323492748824, guid: ab50b608e2db10a46849f11b7408f30e, type: 3}
 --- !u!4 &134789049
 Transform:
   m_ObjectHideFlags: 0
@@ -5013,7 +5020,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5637,7 +5644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
