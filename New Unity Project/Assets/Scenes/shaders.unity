@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43702826, g: 0.48472512, b: 0.56498647, a: 1}
+  m_IndirectSpecularColor: {r: 0.43702868, g: 0.4847257, b: 0.5649872, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -254,6 +254,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57e92bf306ea4f243b0a1ca7edc51a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicSlider: {fileID: 0}
+  sfxSlider: {fileID: 0}
+  masterSlider: {fileID: 0}
 --- !u!1 &94309425
 GameObject:
   m_ObjectHideFlags: 0
@@ -1641,7 +1644,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 5d681429174e3294988ebf3b48e1c6e5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6b6cfe4f9416529458cd5cac9c2d6dcb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2323,7 +2326,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 2fc3469c8a724b746b127c45152bf749, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8eb6b738ad5f51d4db63225b46081b97, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3125,11 +3128,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3668524870734637605, guid: 0510546ecfe7be6418e23ff80131ad7a,
-        type: 3}
-      propertyPath: m_Name
-      value: Cactus 3
-      objectReference: {fileID: 0}
     - target: {fileID: 338454100318623798, guid: 0510546ecfe7be6418e23ff80131ad7a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3185,6 +3183,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3668524870734637605, guid: 0510546ecfe7be6418e23ff80131ad7a,
+        type: 3}
+      propertyPath: m_Name
+      value: Cactus 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0510546ecfe7be6418e23ff80131ad7a, type: 3}
 --- !u!1001 &5242123303181225058
@@ -3194,11 +3197,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4295921984901908531, guid: b802c9bedbf2ae34180ed8f4923b9753,
-        type: 3}
-      propertyPath: m_Name
-      value: Cactus 2
-      objectReference: {fileID: 0}
     - target: {fileID: 992330754258663968, guid: b802c9bedbf2ae34180ed8f4923b9753,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3254,6 +3252,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4295921984901908531, guid: b802c9bedbf2ae34180ed8f4923b9753,
+        type: 3}
+      propertyPath: m_Name
+      value: Cactus 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b802c9bedbf2ae34180ed8f4923b9753, type: 3}
 --- !u!33 &5276855908415779969
@@ -3272,11 +3275,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5322573385380780704, guid: 0f80cc415197bd74c841e9cc4d324401,
-        type: 3}
-      propertyPath: m_Name
-      value: sign
-      objectReference: {fileID: 0}
     - target: {fileID: 5322573385380780719, guid: 0f80cc415197bd74c841e9cc4d324401,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3332,6 +3330,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 101.09601
       objectReference: {fileID: 0}
+    - target: {fileID: 5322573385380780704, guid: 0f80cc415197bd74c841e9cc4d324401,
+        type: 3}
+      propertyPath: m_Name
+      value: sign
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f80cc415197bd74c841e9cc4d324401, type: 3}
 --- !u!1001 &6367357342868260932
@@ -3341,11 +3344,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3133529879373893816, guid: 57f88f3e64206e94fadb4933e7a368a3,
-        type: 3}
-      propertyPath: m_Name
-      value: bird
-      objectReference: {fileID: 0}
     - target: {fileID: 2100877593525985963, guid: 57f88f3e64206e94fadb4933e7a368a3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3400,6 +3398,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3133529879373893816, guid: 57f88f3e64206e94fadb4933e7a368a3,
+        type: 3}
+      propertyPath: m_Name
+      value: bird
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57f88f3e64206e94fadb4933e7a368a3, type: 3}
@@ -3519,11 +3522,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1418044022898400379, guid: 45d6993ea5ed97c4192f57e14fcf8fd0,
-        type: 3}
-      propertyPath: m_Name
-      value: wagon
-      objectReference: {fileID: 0}
     - target: {fileID: 2735583136677064296, guid: 45d6993ea5ed97c4192f57e14fcf8fd0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3578,6 +3576,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1418044022898400379, guid: 45d6993ea5ed97c4192f57e14fcf8fd0,
+        type: 3}
+      propertyPath: m_Name
+      value: wagon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45d6993ea5ed97c4192f57e14fcf8fd0, type: 3}
@@ -3726,11 +3729,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 627441356579340634, guid: b16f608bef97837448755987b1dfb4ca,
-        type: 3}
-      propertyPath: m_Name
-      value: cowskull
-      objectReference: {fileID: 0}
     - target: {fileID: 4534640275273544521, guid: b16f608bef97837448755987b1dfb4ca,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3785,6 +3783,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 627441356579340634, guid: b16f608bef97837448755987b1dfb4ca,
+        type: 3}
+      propertyPath: m_Name
+      value: cowskull
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b16f608bef97837448755987b1dfb4ca, type: 3}
