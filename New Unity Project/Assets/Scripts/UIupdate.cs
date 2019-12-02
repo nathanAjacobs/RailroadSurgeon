@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class UIupdate : MonoBehaviour
 {
+    FMOD.Studio.Bus Music;
+    FMOD.Studio.Bus SFX;
+    FMOD.Studio.Bus Master;
+
     public Transform trainPosition;
     public Text scoreText;
     public Text gameOverText;
@@ -32,12 +36,18 @@ public class UIupdate : MonoBehaviour
 
     void Awake()
     {
-        //score = (int)trainPosition.position.z;
-        //timer = 0f;
-        //gameOver = false;
-        //musicEvent = FMODUnity.RuntimeManager.CreateInstance(music);
-        //musicEvent.start();
-        //musicEvent.setPaused(false);
+        Music = FMODUnity.RuntimeManager.GetBus("bus:/Music");
+        SFX = FMODUnity.RuntimeManager.GetBus("bus:/SFX");
+        Master = FMODUnity.RuntimeManager.GetBus("bus:/Master");
+
+        Music.setVolume(PlayerPrefs.GetFloat("MusicVolume"));
+
+        SFX.setVolume(PlayerPrefs.GetFloat("SFXVolume"));
+
+
+        Master.setVolume(PlayerPrefs.GetFloat("MasterVolume"));
+
+
     }
 
     // Update is called once per frame

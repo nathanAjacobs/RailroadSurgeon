@@ -19,6 +19,11 @@ public class MainMenu : MonoBehaviour
     {
         musicEvent = FMODUnity.RuntimeManager.CreateInstance(music);
         musicEvent.start();
+
+        if(PlayerPrefs.GetInt("firstRun", 1000) == 1000)
+        {
+            PlayerPrefs.SetInt("firstRun", 1);
+        }
     }
 
     public void Play()

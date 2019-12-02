@@ -9,6 +9,7 @@ public class TrainMovement : MonoBehaviour
     public GameObject myPrefab;
 
     public static float speedOfTrain = 1f;
+    private float startSpeed = 1f;
     public float trainSpeed = 1f;
     private Rigidbody rb;
 
@@ -30,6 +31,12 @@ public class TrainMovement : MonoBehaviour
     private float speedIncrease;
 
     private bool isLoaded = false;
+
+    public static bool pauseTrain;
+
+    public static float lastTrainSpeed = 100f;
+
+    private bool justPaused;
 
 
     void OnEnable()
@@ -56,13 +63,22 @@ public class TrainMovement : MonoBehaviour
         oldX = 0f;
         timer = 0f;
         speedIncrease = trainSpeed * (1f / 3f);
+        pauseTrain = false;
+        lastTrainSpeed = trainSpeed;
+
+        justPaused = false;
     }
 
     // Update is called once per frame
 
     private void FixedUpdate()
     {
-        if(isLoaded)
+        if (!justPaused && pauseTrain)
+        {
+            justPaused = true;
+        }
+
+        if (isLoaded)
         {
             timer += Time.fixedDeltaTime;
 
@@ -122,8 +138,21 @@ public class TrainMovement : MonoBehaviour
                     isTurning = false;
                 }
 
+                if (pauseTrain)
+                {
+                    trainSpeed = 0f;
+                    speedOfTrain = 0f;
+                }
+
+                if (justPaused && !pauseTrain)
+                {
+                    trainSpeed = startSpeed;
+                    speedOfTrain = startSpeed;
+                }
+
                 newPos += new Vector3(0, 0, -1) * trainSpeed * 15 * Time.fixedDeltaTime;
-                rb.rotation = (Quaternion.Slerp(rb.rotation, Quaternion.LookRotation(-(newPos - rb.position), Vector3.up), trainSpeed * 5 * Time.fixedDeltaTime));
+                if (!pauseTrain)
+                    rb.rotation = (Quaternion.Slerp(rb.rotation, Quaternion.LookRotation(-(newPos - rb.position), Vector3.up), trainSpeed * 5 * Time.fixedDeltaTime));
                 rb.position = (newPos);
 
                 turnIndex++;
@@ -135,9 +164,23 @@ public class TrainMovement : MonoBehaviour
             }
             else
             {
+                if (pauseTrain)
+                {
+                    trainSpeed = 0f;
+                    speedOfTrain = 0f;
+                }
+
+                if (justPaused && !pauseTrain)
+                {
+                    trainSpeed = startSpeed;
+                    speedOfTrain = startSpeed;
+                }
+
+
                 //Debug.Log("not Turning");
                 Vector3 newPos = rb.position + new Vector3(0, 0, -1) * trainSpeed * 15 * Time.fixedDeltaTime;
-                rb.rotation = (Quaternion.Slerp(rb.rotation, Quaternion.LookRotation(-(newPos - rb.position), Vector3.up), trainSpeed * 5 * Time.fixedDeltaTime));
+                if(!pauseTrain)
+                    rb.rotation = (Quaternion.Slerp(rb.rotation, Quaternion.LookRotation(-(newPos - rb.position), Vector3.up), trainSpeed * 5 * Time.fixedDeltaTime));
                 rb.position = (newPos);
             }
 
@@ -145,6 +188,8 @@ public class TrainMovement : MonoBehaviour
 
             
         }
+
+        
     }
 
     private void Update()

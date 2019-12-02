@@ -8,6 +8,11 @@ public class TrackSwapScript : MonoBehaviour
     public Button leftButton;
     public Button rightButton;
     public Button straightButton;
+
+    public GameObject text1;
+    public GameObject text2;
+
+
     private Vector3 mousePos;
     private bool mouseDown;
 
@@ -60,15 +65,39 @@ public class TrackSwapScript : MonoBehaviour
             //Debug.DrawRay(Camera.main.ScreenPointToRay(Input.mousePosition).origin, Camera.main.ScreenPointToRay(Input.mousePosition).direction * 100, Color.red, 5f);
             if (point.y > 0.15 && Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 1000f, LayerMask.GetMask("Track 1") | LayerMask.GetMask("Track 2") | LayerMask.GetMask("Track 3"), QueryTriggerInteraction.Ignore))
             {
-                LeftTrackScript script = hit.transform.parent.GetComponent<LeftTrackScript>();
-                if(script != null)
+                if (TrainMovement.pauseTrain)
                 {
+                    if (hit.transform.childCount > 0)
+                    {
+                        Transform t = hit.transform.GetChild(0);
+                        Debug.Log(currentTrackSelected);
+                        Debug.Log(t.gameObject.name);
+                        if (t.gameObject.name == "Tut1" && currentTrackSelected == 0 || t.gameObject.name == "Tut2" && currentTrackSelected == 1)
+                        {
+                            LeftTrackScript script = hit.transform.parent.GetComponent<LeftTrackScript>();
+                            script.trackDirection = currentTrackSelected;
+                            GameObject trackModel = FindChildObjectWithTag(hit.transform.parent, "Track");
+                            trackModel.GetComponent<TrackRotationScript>().trackDirection = currentTrackSelected;
+
+                            TrainMovement.pauseTrain = false;
+                            TrainMovement.speedOfTrain = 1f;
+                            text1.SetActive(false);
+                            text2.SetActive(false);
+
+                            if (t.gameObject.name == "Tut2")
+                            {
+                                PlayerPrefs.SetInt("firstRun", 0);
+                            }
+                        }
+                    }
+                }
+                else if(PlayerPrefs.GetInt("firstRun") == 0)
+                {
+                    LeftTrackScript script = hit.transform.parent.GetComponent<LeftTrackScript>();
                     script.trackDirection = currentTrackSelected;
                     GameObject trackModel = FindChildObjectWithTag(hit.transform.parent, "Track");
                     trackModel.GetComponent<TrackRotationScript>().trackDirection = currentTrackSelected;
                 }
-                
-                //track rotation
 
             }
             //Debug.Log(hit.transform.gameObject);
@@ -89,22 +118,57 @@ public class TrackSwapScript : MonoBehaviour
             //mousePos.y = Camera.main.pixelHeight - currentEvent.mousePosition.y;
             //point = new Vector3(mousePos.x, mousePos.y, Camera.main.transform.position.z);
             Touch touch;
+            bool began = false;
             if (Input.touchCount > 0)
             {
                 touch = Input.GetTouch(0);
+                if(touch.phase == TouchPhase.Began)
+                {
+                    began = true;
+                }
                 point = Camera.main.ScreenToViewportPoint(touch.position);
             }
 
             //point = Camera.main.ScreenToViewportPoint(Input.mousePosition);
 
-
+            
             //Debug.DrawRay(Camera.main.ScreenPointToRay(Input.mousePosition).origin, Camera.main.ScreenPointToRay(Input.mousePosition).direction * 100, Color.red, 5f);
-            if (point.y > 0.15 && Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 1000f, LayerMask.GetMask("Track 1") | LayerMask.GetMask("Track 2") | LayerMask.GetMask("Track 3"), QueryTriggerInteraction.Ignore))
+            if (began && point.y > 0.15 && Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 1000f, LayerMask.GetMask("Track 1") | LayerMask.GetMask("Track 2") | LayerMask.GetMask("Track 3"), QueryTriggerInteraction.Ignore))
             {
-                LeftTrackScript script = hit.transform.parent.GetComponent<LeftTrackScript>();
-                script.trackDirection = currentTrackSelected;
-                GameObject trackModel = FindChildObjectWithTag(hit.transform.parent, "Track");
-                trackModel.GetComponent<TrackRotationScript>().trackDirection = currentTrackSelected;
+                if(TrainMovement.pauseTrain)
+                {
+                    if (hit.transform.childCount > 0)
+                    {
+                        Transform t = hit.transform.GetChild(0);
+                        Debug.Log(currentTrackSelected);
+                        Debug.Log(t.gameObject.name);
+                        if (t.gameObject.name == "Tut1" && currentTrackSelected == 0 || t.gameObject.name == "Tut2" && currentTrackSelected == 1)
+                        {
+                            LeftTrackScript script = hit.transform.parent.GetComponent<LeftTrackScript>();
+                            script.trackDirection = currentTrackSelected;
+                            GameObject trackModel = FindChildObjectWithTag(hit.transform.parent, "Track");
+                            trackModel.GetComponent<TrackRotationScript>().trackDirection = currentTrackSelected;
+
+                            TrainMovement.pauseTrain = false;
+                            TrainMovement.speedOfTrain = 1f;
+                            text1.SetActive(false);
+                            text2.SetActive(false);
+
+                            if(t.gameObject.name == "Tut2")
+                            {
+                                PlayerPrefs.SetInt("firstRun", 0);
+                            }
+                        }
+                    }
+                }
+                else if (PlayerPrefs.GetInt("firstRun") == 0)
+                {
+                    LeftTrackScript script = hit.transform.parent.GetComponent<LeftTrackScript>();
+                    script.trackDirection = currentTrackSelected;
+                    GameObject trackModel = FindChildObjectWithTag(hit.transform.parent, "Track");
+                    trackModel.GetComponent<TrackRotationScript>().trackDirection = currentTrackSelected;
+                }
+                
                 //track rotation
 
             }
